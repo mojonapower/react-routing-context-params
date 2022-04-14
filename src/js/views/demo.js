@@ -7,7 +7,9 @@ import "../../styles/demo.css";
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
-
+    useEffect(()=>{
+        actions.alerta()
+    })
 	return (
 		<div className="container">
 			<ul className="list-group">
@@ -18,7 +20,7 @@ export const Demo = () => {
 							className="list-group-item d-flex justify-content-between"
 							style={{ background: item.background }}>
 							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
+								<span>Llévame a: {item.title}</span>
 							</Link>
 							{// Conditional render example
 							// Check to see if the background is orange, if so, display the message
